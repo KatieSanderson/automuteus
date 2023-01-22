@@ -5,6 +5,11 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
+	"strconv"
+	"strings"
+	"time"
+
 	"github.com/automuteus/automuteus/amongus"
 	"github.com/automuteus/automuteus/metrics"
 	"github.com/automuteus/utils/pkg/discord"
@@ -14,10 +19,6 @@ import (
 	"github.com/automuteus/utils/pkg/task"
 	"github.com/go-redis/redis/v8"
 	"github.com/nicksnyder/go-i18n/v2/i18n"
-	"log"
-	"strconv"
-	"strings"
-	"time"
 )
 
 type EndGameMessage bool
@@ -103,13 +104,16 @@ func (bot *Bot) SubscribeToGameByConnectCode(guildID, connectCode string, endGam
 
 					bot.processTransition(game.Phase(num), dgsRequest)
 				case task.PlayerJob:
+					log.Println("Successfully identified player job event:")
+					log.Println(job.Payload)
 					var player game.Player
 					err = json.Unmarshal([]byte(job.Payload.(string)), &player)
 					if err != nil {
 						log.Println(err)
 						break
 					}
-					if player.Color > 17 || player.Color < 0 {
+					if player.Color > 26 || player.Color < 0 {
+						log.Println("Identified unsupported color: " + strconv.Itoa(player.Color))
 						break
 					}
 
@@ -132,8 +136,8 @@ func (bot *Bot) SubscribeToGameByConnectCode(guildID, connectCode string, endGam
 					correlatedUserID = userID
 				case task.GameOverJob:
 					var gameOverResult game.Gameover
-					// log.Println("Successfully identified game over event:")
-					// log.Println(job.Payload)
+					log.Println("Successfully identified game over event:")
+					log.Println(job.Payload)
 					err := json.Unmarshal([]byte(job.Payload.(string)), &gameOverResult)
 					if err != nil {
 						log.Println(err)

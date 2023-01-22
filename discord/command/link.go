@@ -1,11 +1,12 @@
 package command
 
 import (
+	"strings"
+
 	"github.com/automuteus/utils/pkg/discord"
 	"github.com/automuteus/utils/pkg/settings"
 	"github.com/bwmarrin/discordgo"
 	"github.com/nicksnyder/go-i18n/v2/i18n"
-	"strings"
 )
 
 type LinkStatus int
@@ -18,7 +19,7 @@ const (
 
 var Link = discordgo.ApplicationCommand{
 	Name:        "link",
-	Description: "Link a Discord User to their in-game color",
+	Description: "Link a Discord User to their in-game color (required for >24 colors)",
 	Options: []*discordgo.ApplicationCommandOption{
 		{
 			Type:        discordgo.ApplicationCommandOptionUser,
@@ -31,7 +32,6 @@ var Link = discordgo.ApplicationCommand{
 			Name:        "color",
 			Description: "In-game color",
 			Required:    true,
-			Choices:     colorsToCommandChoices(),
 		},
 	},
 }

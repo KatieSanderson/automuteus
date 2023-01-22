@@ -4,6 +4,12 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"log"
+	"os"
+	"strconv"
+	"sync"
+	"time"
+
 	"github.com/automuteus/automuteus/amongus"
 	"github.com/automuteus/automuteus/discord/command"
 	"github.com/automuteus/automuteus/metrics"
@@ -17,11 +23,6 @@ import (
 	"github.com/automuteus/utils/pkg/token"
 	"github.com/bwmarrin/discordgo"
 	"github.com/top-gg/go-dbl"
-	"log"
-	"os"
-	"strconv"
-	"sync"
-	"time"
 )
 
 type Bot struct {
@@ -349,6 +350,7 @@ func (bot *Bot) getInfo() command.BotInfo {
 }
 
 func linkPlayer(redis *RedisInterface, dgs *GameState, userID, color string) (command.LinkStatus, error) {
+	log.Println("Attempting to link player: " + color + " user: " + userID)
 	var auData amongus.PlayerData
 	found := false
 	if game.IsColorString(color) {

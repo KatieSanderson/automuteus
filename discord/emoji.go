@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"strconv"
 
 	"github.com/automuteus/utils/pkg/game"
 
@@ -52,8 +53,8 @@ func (e *Emoji) DownloadAndBase64Encode() string {
 
 func emptyStatusEmojis() AlivenessEmojis {
 	topMap := make(AlivenessEmojis)
-	topMap[true] = make([]Emoji, 18) // 18 colors for alive/dead
-	topMap[false] = make([]Emoji, 18)
+	topMap[true] = make([]Emoji, 27) // 27 colors for alive/dead
+	topMap[false] = make([]Emoji, 27)
 	return topMap
 }
 
@@ -63,12 +64,14 @@ func (bot *Bot) addAllMissingEmojis(s *discordgo.Session, guildID string, alive 
 		for _, v := range serverEmojis {
 			if v.Name == emoji.Name {
 				emoji.ID = v.ID
+				log.Println("Found emoji in guild. i=" + strconv.Itoa(i) + " alive=" + strconv.FormatBool(alive) + " length=" + strconv.Itoa(len(bot.StatusEmojis[alive])))
 				bot.StatusEmojis[alive][i] = emoji
 				alreadyExists = true
 				break
 			}
 		}
 		if !alreadyExists {
+			log.Println("Creating new emoji: " + emoji.Name)
 			b64 := emoji.DownloadAndBase64Encode()
 			em, err := s.GuildEmojiCreate(guildID, emoji.Name, b64, nil)
 			if err != nil {
@@ -84,6 +87,10 @@ func (bot *Bot) addAllMissingEmojis(s *discordgo.Session, guildID string, alive 
 
 func EmojisToSelectMenuOptions(emojis []Emoji, unlinkEmoji string) (arr []discordgo.SelectMenuOption) {
 	for i, v := range emojis {
+		// can only add 25 emojis (24 + unlink) on the menu, others can be added via command
+		if i >= 24 {
+			continue
+		}
 		arr = append(arr, v.toSelectMenuOption(game.GetColorStringForInt(i)))
 	}
 	arr = append(arr, discordgo.SelectMenuOption{
@@ -182,6 +189,43 @@ var GlobalAlivenessEmojis = AlivenessEmojis{
 			Name: "aucoral",
 			ID:   "866558066552209448",
 		},
+		game.Watermelon: {
+			Name: "auwatermelon",
+			ID:   "1066411466594472067",
+		},
+		game.Chocolate: {
+			Name: "auchocolate",
+			ID:   "1066471329622147172",
+		},
+		game.SkyBlue: {
+			Name: "auskyblue",
+			ID:   "1066471357602340864",
+		},
+		game.Beige: {
+			Name: "aubeige",
+			ID:   "1066476918834221126",
+		},
+		game.HotPink: {
+			Name: "auhotpink",
+			ID:   "1066478635063722044",
+		},
+		game.Turquoise: {
+			Name: "auturquoise",
+			ID:   "1066479770407288832",
+		},
+		game.Lilac: {
+			Name: "aulilac",
+			ID:   "1066479823008055346",
+		},
+		game.Olive: {
+			Name: "auolive",
+			ID:   "1066704956645724180",
+		},
+		game.Azure: {
+			Name: "auazure",
+			ID:   "1066704865079873656",
+		},
+		// dont even think of adding rainbow
 	},
 	false: []Emoji{
 		game.Red: {
@@ -256,6 +300,43 @@ var GlobalAlivenessEmojis = AlivenessEmojis{
 			Name: "aucoraldead",
 			ID:   "866558067024723978",
 		},
+		game.Watermelon: {
+			Name: "auwatermelondead",
+			ID:   "1066411469320761344",
+		},
+		game.Chocolate: {
+			Name: "auchocolatedead",
+			ID:   "1066471330351947787",
+		},
+		game.SkyBlue: {
+			Name: "auskybluedead",
+			ID:   "1066471360114733129",
+		},
+		game.Beige: {
+			Name: "aubeigedead",
+			ID:   "1066476922290319421",
+		},
+		game.HotPink: {
+			Name: "auhotpinkdead",
+			ID:   "1066478637412520046",
+		},
+		game.Turquoise: {
+			Name: "auturquoisedead",
+			ID:   "1066479771648790659",
+		},
+		game.Lilac: {
+			Name: "aulilacdead",
+			ID:   "1066479825415581717",
+		},
+		game.Olive: {
+			Name: "auolivedead",
+			ID:   "1066704958189224037",
+		},
+		game.Azure: {
+			Name: "auazuredead",
+			ID:   "1066704867873275904",
+		},
+		// dont even think of adding rainbow
 	},
 }
 
