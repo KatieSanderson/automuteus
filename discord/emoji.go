@@ -225,6 +225,34 @@ var GlobalAlivenessEmojis = AlivenessEmojis{
 			Name: "auazure",
 			ID:   "1066704865079873656",
 		},
+		// game.Magenta: {
+		// 	Name: "aumagenta",
+		// 	ID:   "1066749135157469234",
+		// },
+		// game.Plum: {
+		// 	Name: "auplum",
+		// 	ID:   "1066749303646863391",
+		// },
+		// game.Mint: {
+		// 	Name: "aumint",
+		// 	ID:   "1066749219844673566",
+		// },
+		// game.Chartreuse: {
+		// 	Name: "auchartreuse",
+		// 	ID:   "1066748547648725122",
+		// },
+		// game.Macau: {
+		// 	Name: "aumacau",
+		// 	ID:   "1066748685750386698",
+		// },
+		// game.Tawny: {
+		// 	Name: "autawny",
+		// 	ID:   "1066749360018296962",
+		// },
+		// game.Gold: {
+		// 	Name: "augold",
+		// 	ID:   "1066748597309292545",
+		// },
 		// dont even think of adding rainbow
 	},
 	false: []Emoji{
@@ -336,6 +364,34 @@ var GlobalAlivenessEmojis = AlivenessEmojis{
 			Name: "auazuredead",
 			ID:   "1066704867873275904",
 		},
+		// game.Magenta: {
+		// 	Name: "aumagentadead",
+		// 	ID:   "1066749137837637682",
+		// },
+		// game.Plum: {
+		// 	Name: "auplumdead",
+		// 	ID:   "1066749306658361374",
+		// },
+		// game.Mint: {
+		// 	Name: "aumintdead",
+		// 	ID:   "1066749222046683137",
+		// },
+		// game.Chartreuse: {
+		// 	Name: "auchartreusedead",
+		// 	ID:   "1066748549372596315",
+		// },
+		// game.Macau: {
+		// 	Name: "aumacaudead",
+		// 	ID:   "1066748688501846138",
+		// },
+		// game.Tawny: {
+		// 	Name: "autawnydead",
+		// 	ID:   "1066749363252101201",
+		// },
+		// game.Gold: {
+		// 	Name: "augolddead",
+		// 	ID:   "1066748600383717386",
+		// },
 		// dont even think of adding rainbow
 	},
 }
