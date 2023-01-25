@@ -53,8 +53,8 @@ func (e *Emoji) DownloadAndBase64Encode() string {
 
 func emptyStatusEmojis() AlivenessEmojis {
 	topMap := make(AlivenessEmojis)
-	topMap[true] = make([]Emoji, 27) // 27 colors for alive/dead
-	topMap[false] = make([]Emoji, 27)
+	topMap[true] = make([]Emoji, 34) // 34 colors for alive/dead
+	topMap[false] = make([]Emoji, 34)
 	return topMap
 }
 
@@ -191,68 +191,68 @@ var GlobalAlivenessEmojis = AlivenessEmojis{
 		},
 		game.Watermelon: {
 			Name: "auwatermelon",
-			ID:   "1066411466594472067",
+			ID:   "1066789583804702953",
 		},
 		game.Chocolate: {
 			Name: "auchocolate",
-			ID:   "1066471329622147172",
+			ID:   "1066789585608249415",
 		},
 		game.SkyBlue: {
 			Name: "auskyblue",
-			ID:   "1066471357602340864",
+			ID:   "1066789587701202944",
 		},
 		game.Beige: {
 			Name: "aubeige",
-			ID:   "1066476918834221126",
+			ID:   "1066789589433466960",
 		},
-		game.HotPink: {
-			Name: "auhotpink",
-			ID:   "1066478635063722044",
+		game.Magenta: {
+			Name: "aumagenta",
+			ID:   "1066749135157469234",
 		},
 		game.Turquoise: {
 			Name: "auturquoise",
-			ID:   "1066479770407288832",
+			ID:   "1066789592864395344",
 		},
 		game.Lilac: {
 			Name: "aulilac",
-			ID:   "1066479823008055346",
+			ID:   "1066789594948980746",
 		},
 		game.Olive: {
 			Name: "auolive",
-			ID:   "1066704956645724180",
+			ID:   "1066789597478125608",
 		},
 		game.Azure: {
 			Name: "auazure",
-			ID:   "1066704865079873656",
+			ID:   "1066789599172644915",
 		},
-		// game.Magenta: {
-		// 	Name: "aumagenta",
-		// 	ID:   "1066749135157469234",
-		// },
-		// game.Plum: {
-		// 	Name: "auplum",
-		// 	ID:   "1066749303646863391",
-		// },
-		// game.Mint: {
-		// 	Name: "aumint",
-		// 	ID:   "1066749219844673566",
-		// },
-		// game.Chartreuse: {
-		// 	Name: "auchartreuse",
-		// 	ID:   "1066748547648725122",
-		// },
-		// game.Macau: {
-		// 	Name: "aumacau",
-		// 	ID:   "1066748685750386698",
-		// },
-		// game.Tawny: {
-		// 	Name: "autawny",
-		// 	ID:   "1066749360018296962",
-		// },
-		// game.Gold: {
-		// 	Name: "augold",
-		// 	ID:   "1066748597309292545",
-		// },
+		game.Plum: {
+			Name: "auplum",
+			ID:   "1066749303646863391",
+		},
+		game.Jungle: {
+			Name: "aujungle",
+			ID:   "1067882143646236773",
+		},
+		game.Mint: {
+			Name: "aumint",
+			ID:   "1066749219844673566",
+		},
+		game.Chartreuse: {
+			Name: "auchartreuse",
+			ID:   "1066748547648725122",
+		},
+		game.Macau: {
+			Name: "aumacau",
+			ID:   "1066748685750386698",
+		},
+		game.Tawny: {
+			Name: "autawny",
+			ID:   "1066749360018296962",
+		},
+		game.Gold: {
+			Name: "augold",
+			ID:   "1066748597309292545",
+		},
 		// dont even think of adding rainbow
 	},
 	false: []Emoji{
@@ -330,68 +330,68 @@ var GlobalAlivenessEmojis = AlivenessEmojis{
 		},
 		game.Watermelon: {
 			Name: "auwatermelondead",
-			ID:   "1066411469320761344",
+			ID:   "1066789611466137651",
 		},
 		game.Chocolate: {
 			Name: "auchocolatedead",
-			ID:   "1066471330351947787",
+			ID:   "1066789613689114634",
 		},
 		game.SkyBlue: {
 			Name: "auskybluedead",
-			ID:   "1066471360114733129",
+			ID:   "1066789615652057259",
 		},
 		game.Beige: {
 			Name: "aubeigedead",
-			ID:   "1066476922290319421",
+			ID:   "1066789617480769658",
 		},
-		game.HotPink: {
-			Name: "auhotpinkdead",
-			ID:   "1066478637412520046",
+		game.Magenta: {
+			Name: "aumagentadead",
+			ID:   "1066749137837637682",
 		},
 		game.Turquoise: {
 			Name: "auturquoisedead",
-			ID:   "1066479771648790659",
+			ID:   "1066789623034040320",
 		},
 		game.Lilac: {
 			Name: "aulilacdead",
-			ID:   "1066479825415581717",
+			ID:   "1066789625726763058",
 		},
 		game.Olive: {
 			Name: "auolivedead",
-			ID:   "1066704958189224037",
+			ID:   "1066789627832307813",
 		},
 		game.Azure: {
 			Name: "auazuredead",
-			ID:   "1066704867873275904",
+			ID:   "1066789629623275570",
 		},
-		// game.Magenta: {
-		// 	Name: "aumagentadead",
-		// 	ID:   "1066749137837637682",
-		// },
-		// game.Plum: {
-		// 	Name: "auplumdead",
-		// 	ID:   "1066749306658361374",
-		// },
-		// game.Mint: {
-		// 	Name: "aumintdead",
-		// 	ID:   "1066749222046683137",
-		// },
-		// game.Chartreuse: {
-		// 	Name: "auchartreusedead",
-		// 	ID:   "1066748549372596315",
-		// },
-		// game.Macau: {
-		// 	Name: "aumacaudead",
-		// 	ID:   "1066748688501846138",
-		// },
-		// game.Tawny: {
-		// 	Name: "autawnydead",
-		// 	ID:   "1066749363252101201",
-		// },
-		// game.Gold: {
-		// 	Name: "augolddead",
-		// 	ID:   "1066748600383717386",
-		// },
+		game.Plum: {
+			Name: "auplumdead",
+			ID:   "1066749306658361374",
+		},
+		game.Jungle: {
+			Name: "aujungledead",
+			ID:   "1067882146934575164",
+		},
+		game.Mint: {
+			Name: "aumintdead",
+			ID:   "1066749222046683137",
+		},
+		game.Chartreuse: {
+			Name: "auchartreusedead",
+			ID:   "1066748549372596315",
+		},
+		game.Macau: {
+			Name: "aumacaudead",
+			ID:   "1066748688501846138",
+		},
+		game.Tawny: {
+			Name: "autawnydead",
+			ID:   "1066749363252101201",
+		},
+		game.Gold: {
+			Name: "augolddead",
+			ID:   "1066748600383717386",
+		},
 		// dont even think of adding rainbow
 	},
 }

@@ -112,7 +112,7 @@ func (bot *Bot) SubscribeToGameByConnectCode(guildID, connectCode string, endGam
 						log.Println(err)
 						break
 					}
-					if player.Color > 26 || player.Color < 0 {
+					if player.Color > 33 || player.Color < 0 {
 						log.Println("Identified unsupported color: " + strconv.Itoa(player.Color))
 						break
 					}

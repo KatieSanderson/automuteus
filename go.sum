@@ -6,8 +6,8 @@ github.com/BurntSushi/toml v1.0.0/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbi
 github.com/BurntSushi/toml v1.1.0 h1:ksErzDEI1khOiGPgpwuI7x2ebx/uXQNw7xJpn9Eq1+I=
 github.com/BurntSushi/toml v1.1.0/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
-github.com/KatieSanderson/utils v0.0.0-20230122151314-1a0629c190e2 h1:+N0fJ0MqS/SWNWh8/xIgBzVfZuJbLhNlv1FXHmxw3hg=
-github.com/KatieSanderson/utils v0.0.0-20230122151314-1a0629c190e2/go.mod h1:A8zWmP3FEG1Aanz/9msstVMswIfkx1nxY59gNfRztXw=
+github.com/KatieSanderson/utils v0.0.0-20230124200707-4f394bd39c81 h1:YSPEi5sp9JaXDL0dc9Z/mezEX9b8L6HbVEL/KsueNJM=
+github.com/KatieSanderson/utils v0.0.0-20230124200707-4f394bd39c81/go.mod h1:A8zWmP3FEG1Aanz/9msstVMswIfkx1nxY59gNfRztXw=
 github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
 github.com/Masterminds/semver/v3 v3.1.1/go.mod h1:VPu/7SZ7ePZ3QOrcuXROw5FAcLl4a0cBrbBpGY/8hQs=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=

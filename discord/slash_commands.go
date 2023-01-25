@@ -3,12 +3,13 @@ package discord
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/automuteus/utils/pkg/storage"
 	"log"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/automuteus/utils/pkg/storage"
 
 	redis_common "github.com/automuteus/automuteus/common"
 	"github.com/automuteus/automuteus/discord/command"
